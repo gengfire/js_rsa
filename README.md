@@ -9,4 +9,4 @@
 
 ### 存在不足
 - 字节数超过117会自动分段加密，分段加密后的密文长度会加倍
-- emoji表情符号加密后再解密会出错，遂暂不支持emoji表情加密
+- emoji表情符号加密后再解密会出错，所以针对含有emoji表情的内容需要提取emoji然后encodeURIComponent，提供emojiEncode方法。
