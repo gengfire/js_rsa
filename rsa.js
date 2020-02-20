@@ -163,3 +163,13 @@ export const decrypt = (encrypted) => {
 
   return jsEncrypt.decryptLong(encrypted);
 };
+
+export const emojiEncode = (txtStr) => {
+  const emojiReg = [
+    '\ud83c[\udf00-\udfff]',
+    '\ud83d[\udc00-\ude4f]',
+    '\ud83d[\ude80-\udeff]'
+  ];
+  return txtStr.replace(new RegExp(emojiReg.join('|'), 'g'), re => encodeURIComponent(re));
+};
+
